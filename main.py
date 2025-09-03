@@ -1,8 +1,32 @@
 from fastapi import FastAPI
-from starlette.responses import JSONResponse
+
+class Phones:
+    id: String
+    brand: String
+    models: String
+    class characteristique:
+        ram_memory: int
+        rom_memory: int
+
 
 app = FastAPI()
 
-@app.get("/ping")
+
+@app.get("/health")
 def ping():
-    return JSONResponse({"message": f"Hello"}, status_code=200);
+    return Response(content='OK',status_code=200,media_type='text/plain')
+
+@app.post("/phones")
+def postPhones():
+    return null
+
+@app.get("/phones")
+def getPhones():
+    return null
+
+@app.get("/phones")
+def getPhonesById(id: Request):
+    return null
+@app.put("/phones")
+def getPhonesById(id :Request):
+    return null
