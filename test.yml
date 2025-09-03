@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: STD24169
+  description: this is a specification of STD24169
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+paths:
+  /health:
+    get:
+      responses:
+        '200':
+          description: 'get ok'
+          content:
+            text/plain:
+              example: 'OK'
+  /phones:
+    post:
+      responses:
+        '201':
+          requestBody:
+            content:
+              application/json:
+                s
+components:
+  schemas:
+    phones:
+      type: object
+      properties:
+        id:
+          type: string
+        brand:
+          type: string
+        models:
+          type: string
+        characteristique:
+          type: object
+          properties:
+            ram_memory:
+              type: int
+            rom_memory:
+              type: int
